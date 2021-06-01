@@ -15,9 +15,11 @@ form.addEventListener('submit', async (e) => {
 			method: 'POST',
 			body: formData,
 		})
-		const data = await response.text()
+		const data = await response.json()
 
-		info.innerText = data
+		// revisa la consola, alli veras todos los datos
+		console.log(data)
+		info.innerText = data[0].name
 		result.classList.add('active')
 	}
 })
